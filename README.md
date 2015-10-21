@@ -18,5 +18,9 @@ run docker like
 
     docker run -e REPO=https://git-codecommit.us-east-1.amazonaws.com/v1/repos/helloawsworld.com -e BUCKET=helloawsworldsource cloudwayio/aws-codecommit-s3
 
+## Note
+
+EC2 Container Instance must have an EC2 Role which has access to the CodeCommit repository and S3 bucket.
+
 ## source
 [https://github.com/cloudwayio/aws-codecommit-s3](https://github.com/cloudwayio/aws-codecommit-s3)
