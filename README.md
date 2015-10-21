@@ -8,11 +8,11 @@ This docker image requires two ENV variables.
 
 repo is the codecommit repo which is something like
 
-     https://git-codecommit.us-east-1.amazonaws.com/v1/repos/helloawsworld.com
+    https://git-codecommit.us-east-1.amazonaws.com/v1/repos/helloawsworld.com
 
 bucket is something like
 
-       helloawsworldsource
+    helloawsworldsource
 
 run docker like
 
