@@ -29,12 +29,12 @@ Follow the instructions [here](http://docs.aws.amazon.com/AmazonECS/latest/devel
 Once you have ECS cluster up with an instance create a task definition.
 
 - Go to **Task Definitions** page, select **Create new Task Definition**
-- In the Task Definition Name field, enter a name for your task definition.
+- In the **Task Definition Name** field, enter a name for your task definition.
 - Click **Add Container Definition** 
   - Give a name
   - Enter ```cloudwayio/aws-codecommit-s3``` as **Image**
 - Click **Advanced container configuration**
-  - Under **Env Variables``
+  - Under **Env Variables**
   - Enter ```REPO``` as key and name of the CodeComit repo as value
   - Enter ```BUCKET``` as key and  bucket name as value
 
