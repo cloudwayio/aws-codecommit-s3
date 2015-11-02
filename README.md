@@ -40,29 +40,10 @@ Once you have ECS cluster up with an instance create a task definition.
 
 ## Run task from cli
 
-List task definitions
-
-    $ aws ecs list-task-definitions --region us-east-1 
-
-    {
-	"taskDefinitionArns": [
-	    "arn:aws:ecs:us-east-1:1234567890:task-definition/codecommit-test:1" 
-	]
-    }
-
-
 Run the task
 
     $ aws ecs run-task --cluster default --count 1 --task-definition codecommit-test:1 --region us-east-1
 
-You can check the running tasks
-
-    $ aws ecs list-tasks --region us-east-1 --cluster default
-    {
-	"taskArns": [
-	    "arn:aws:ecs:us-east-1:1234567890:task/2e69330a-a688-4f66-b741-280a38c7a7ca"
-	]
-    }
 
 ## Check Bucket
 
@@ -70,7 +51,7 @@ After docker instance finishes running, you must have a new file named ```artifa
 
 # Integration with CI/CD
 
-## Option 1:
+## Option 1
 
 You may run aws cli command which will require aws cli to be installed.
 
