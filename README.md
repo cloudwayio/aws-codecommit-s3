@@ -74,7 +74,7 @@ After docker instance finishes running, you must have a new file named ```artifa
 
 You may run aws cli command which will require aws cli to be installed.
 
-aws ecs run-task --cluster default --count 1 --task-definition codecommit-test:1 --region us-east-1
+    $ aws ecs run-task --cluster default --count 1 --task-definition codecommit-test:1 --region us-east-1
 
 ## Option 2
 
