@@ -55,34 +55,7 @@ Run the task
 
     $ aws ecs run-task --cluster default --count 1 --task-definition codecommit-test:1 --region us-east-1
 
-    {
-	"failures": [], 
-	"tasks": [
-	    {
-		"taskArn": "arn:aws:ecs:us-east-1:1234567890:task/2e69330a-a688-4f66-b741-280a38c7a7ca", 
-		"overrides": {
-		    "containerOverrides": [
-			{
-			    "name": "codecommit-test"
-			}
-		    ]
-		}, 
-		"lastStatus": "PENDING", 
-		"containerInstanceArn": "arn:aws:ecs:us-east-1:1234567890:container-instance/14a57c7c-5fa6-4836-bfcc-e7eb0454c6ee", 
-		"clusterArn": "arn:aws:ecs:us-east-1:1234567890:cluster/default", 
-		"desiredStatus": "RUNNING", 
-		"taskDefinitionArn": "arn:aws:ecs:us-east-1:1234567890:task-definition/codecommit-test:1", 
-		"containers": [
-		    {
-			"containerArn": "arn:aws:ecs:us-east-1:1234567890:container/7c4052cc-0ca7-48c6-bab4-e2ac421f461e", 
-			"taskArn": "arn:aws:ecs:us-east-1:1234567890:task/2e69330a-a688-4f66-b741-280a38c7a7ca", 
-			"lastStatus": "PENDING", 
-			"name": "codecommit-test"
-		    }
-		]
-	    }
-	]
-    }
+You can check the running tasks
 
     $ aws ecs list-tasks --region us-east-1 --cluster default
     {
@@ -95,10 +68,23 @@ Run the task
 
 After docker instance finishes running, you must have a new file named ```artifact.zip``` in the bucket you passed to the task.
 
+# Integration with CI/CD
+
+## Option 1:
+
+You may run aws cli command which will require aws cli to be installed.
+
+aws ecs run-task --cluster default --count 1 --task-definition codecommit-test:1 --region us-east-1
+
+## Option 2
+
+You can call [AWS ECS API](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html) directly with curl.
 
 ## Note
 
 EC2 Container Instance must have an EC2 Role which has access to the CodeCommit repository and S3 bucket.
+
+Docker image can also run locally or on the instane that runs a tool like jenkins.
 
 ## Reference
 [Souce Code](https://github.com/cloudwayio/aws-codecommit-s3)
